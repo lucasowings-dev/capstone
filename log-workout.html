@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FitTrack | Log Workout</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-md navbar-dark">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">FitTrack</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="nav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item active"><a class="nav-link" href="log-workout.html">Log Workout</a></li>
+        <li class="nav-item"><a class="nav-link" href="progress.html">Progress</a></li>
+        <li class="nav-item"><a class="nav-link" href="goals.html">My Goals</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main class="container page-content">
+  <div class="page-title">
+    <p class="eyebrow">RECORD YOUR ACTIVITY</p>
+    <h1>Log a Workout</h1>
+    <p>Add your workout below. Your information is saved in this browser.</p>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-7 mb-4">
+      <section class="panel">
+        <form id="workoutForm">
+          <div class="form-group">
+            <label for="activity">Activity</label>
+            <select id="activity" class="form-control" required>
+              <option value="">Choose an activity</option>
+              <option>Weight Training</option>
+              <option>Running</option>
+              <option>Basketball</option>
+              <option>Track &amp; Field</option>
+              <option>Walking</option>
+              <option>Cycling</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-sm-6">
+              <label for="workoutDate">Date</label>
+              <input type="date" id="workoutDate" class="form-control" required>
+            </div>
+            <div class="form-group col-sm-6">
+              <label for="duration">Duration (minutes)</label>
+              <input type="number" id="duration" class="form-control" min="1" max="1440" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="notes">Notes (optional)</label>
+            <textarea id="notes" class="form-control" rows="3" placeholder="What did you work on?"></textarea>
+          </div>
+
+          <button class="btn btn-gold btn-block" type="submit">Save Workout</button>
+          <p id="formMessage" class="form-message" role="status"></p>
+        </form>
+      </section>
+    </div>
+
+    <div class="col-lg-5 mb-4">
+      <section class="panel tip-panel">
+        <p class="eyebrow">QUICK TIP</p>
+        <h2>Keep it simple</h2>
+        <p>Record your activity after you finish. Every workout counts toward building a consistent routine.</p>
+      </section>
+    </div>
+  </div>
+
+  <section class="section-block">
+    <div class="section-heading">
+      <h2>Workout History</h2>
+      <button id="clearWorkouts" class="btn btn-outline-secondary btn-sm" type="button">Clear all</button>
+    </div>
+    <div class="table-responsive">
+      <table class="table custom-table">
+        <thead><tr><th>Date</th><th>Activity</th><th>Minutes</th><th>Notes</th><th></th></tr></thead>
+        <tbody id="workoutHistory">
+          <tr><td colspan="5" class="empty-state">No workouts saved yet.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</main>
+
+<footer><div class="container"><strong>FitTrack</strong><span>Small steps add up.</span></div></footer>
+<script src="js/app.js"></script>
+</body>
+</html>

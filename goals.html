@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FitTrack | My Goals</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-md navbar-dark">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">FitTrack</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="nav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="log-workout.html">Log Workout</a></li>
+        <li class="nav-item"><a class="nav-link" href="progress.html">Progress</a></li>
+        <li class="nav-item active"><a class="nav-link" href="goals.html">My Goals</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main class="container page-content">
+  <div class="page-title">
+    <p class="eyebrow">SET A TARGET</p>
+    <h1>My Goals</h1>
+    <p>Create fitness goals and track your progress as you work toward them.</p>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-5 mb-4">
+      <section class="panel">
+        <h2 class="panel-title">Add a New Goal</h2>
+        <form id="goalForm">
+          <div class="form-group">
+            <label for="goalName">Goal name</label>
+            <input id="goalName" class="form-control" maxlength="60" placeholder="e.g. Complete 10 workouts" required>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-6">
+              <label for="goalTarget">Target</label>
+              <input id="goalTarget" type="number" class="form-control" min="1" step="1" placeholder="e.g. 10" required>
+            </div>
+            <div class="form-group col-6">
+              <label for="goalUnit">Unit</label>
+              <select id="goalUnit" class="form-control">
+                <option value="workouts">workouts</option>
+                <option value="minutes">minutes</option>
+                <option value="runs">runs</option>
+              </select>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-gold btn-block">Add Goal</button>
+          <p id="goalMessage" class="form-message" role="status"></p>
+        </form>
+      </section>
+    </div>
+
+    <div class="col-lg-7">
+      <section class="section-block mt-0">
+        <div class="section-heading"><h2>Current Goals</h2></div>
+        <div id="goalsList" class="goal-list">
+          <p class="empty-state">No goals yet. Add your first goal!</p>
+        </div>
+      </section>
+    </div>
+  </div>
+</main>
+
+<footer><div class="container"><strong>FitTrack</strong><span>Small steps add up.</span></div></footer>
+<script src="js/app.js"></script>
+</body>
+</html>
